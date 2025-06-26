@@ -16,7 +16,7 @@ export default function HomePage() {
 					cta="Learn More →"
 				/>
 			</section>
-
+			<hr className="my-12 border-t-2 border-gray-200" />
 			<section id="mission">
 				<Mission
 					title="Empowering Farmers Across the Region"
