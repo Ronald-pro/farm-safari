@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { HiOutlineMenu, HiX } from "react-icons/hi";
-import { FaAngleDown } from "react-icons/fa";
-import logo from "@/public/logo.png";
 
 export default function Navbar() {
 	const [open, setOpen] = useState(false);
@@ -38,13 +36,13 @@ export default function Navbar() {
 		return () => sections.forEach((section) => observer.unobserve(section));
 	}, []);
 
-	const scrollToSection = (id: string) => {
-		const section = document.getElementById(id);
-		if (section) {
-			section.scrollIntoView({ behavior: "smooth" });
-			setOpen(false); // close mobile menu
-		}
-	};
+	// const scrollToSection = (id: string) => {
+	// 	const section = document.getElementById(id);
+	// 	if (section) {
+	// 		section.scrollIntoView({ behavior: "smooth" });
+	// 		setOpen(false); // close mobile menu
+	// 	}
+	// };
 
 	return (
 		<nav className="fixed top-0 left-0 w-full bg-white shadow border-b border-[var(--colors-lightgreen)] z-50">

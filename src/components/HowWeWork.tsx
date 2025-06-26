@@ -16,7 +16,7 @@ export default function HowWeWork({ items }: { items: Item[] }) {
       </div>
 
       <div className="grid gap-8 px-4 md:grid-cols-3 max-w-7xl mx-auto">
-        {items.map((item, idx) => (
+        {items.map((item) => (
           <div key={item.title} className="bg-white rounded-lg shadow-md overflow-hidden">
             <img src={item.imgSrc} alt={item.title} className="h-48 w-full object-cover" />
             <div className="p-6">
