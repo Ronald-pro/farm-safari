@@ -1,7 +1,7 @@
 // pages/about.tsx
 import AboutUsSection from "@/components/AboutUsSection";
 import { aboutSections } from "@/data/aboutSection";
-import Link from "next/link";
+
 
 export default function AboutPage() {
 	return (
