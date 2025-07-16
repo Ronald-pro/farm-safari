@@ -13,9 +13,7 @@ export default function Navbar() {
 		{ text: "Home", href: "/" },
 		{ text: "About Us", href: "/about" },
 		{ text: "What We Do", href: "/what-we-do" },
-		{ text: "Our Stories", href: "#" },
-		{ text: "Get Involved", href: "#" },
-		{ text: "Resources", href: "#" }
+		{ text: "Our Team", href: "#" }
 	];
 
 	useEffect(() => {

@@ -5,23 +5,30 @@ export default function WhatWeDo() {
 	const items = [
 		{
 			//   icon: <Handshake className="h-10 w-10 text-red-600" />,
-			title: "Advocacy and Campaigns",
+			title: "Sustainable Crop Production",
 			description:
-				"We mobilize people to challenge the structures that sustain poverty and advocate for a better world.",
+				"We promote climate-resilient, high-return crops like chili and moringa that restore soil health and generate income. We support farmer training and access to certified seeds and standards like GlobalGAP and KS 1758.",
 			link: "#"
 		},
 		{
 			//   icon: <Megaphone className="h-10 w-10 text-orange-500" />,
-			title: "Humanitarian Aid",
+			title: "Agroforestry and Carbon Farming",
 			description:
-				"When a crisis hits, we provide life-saving aid and support through local partners.",
+				"We help farmers plant high carbon-sequestering trees like macadamia and moringa. These trees provide food, income, erosion control, and long-term environmental benefits. We are also preparing farmers for future participation in carbon credit markets. ",
 			link: "#"
 		},
 		{
 			//   icon: <Sprout className="h-10 w-10 text-green-700" />,
-			title: "Long Term Development",
+			title: "Capacity Building",
 			description:
-				"We work with communities to develop solutions that address poverty now and into the future.",
+				"We train farmers, especially women and the youth in regenerative farming and agroforestry models",
+			link: "#"
+		},
+		{
+			//   icon: <Sprout className="h-10 w-10 text-green-700" />,
+			title: "Collaborative Program Implementation ",
+			description:
+				"We partner with like-minded organizations to co-implement projects that scale impact and connect farmers to sustainable value chains.",
 			link: "#"
 		}
 	];
@@ -33,11 +40,14 @@ export default function WhatWeDo() {
 					What we do
 				</h2>
 				<p className="text-gray-600">
-					Learn about how we partner with communities to create lasting change.
+					Farm Safari runs regenerative agricultural and agroforestry programs through unique scalable  out-grower models.
 				</p>
+				<h6 className="text-gray-600-bold">
+					Our key areas include:
+				</h6>
 			</div>
 
-			<div className="grid gap-8 md:grid-cols-3">
+			<div className="grid gap-8 md:grid-cols-2">
 				{items.map((item, index) => (
 					<div
 						key={index}

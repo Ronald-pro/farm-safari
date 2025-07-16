@@ -1,7 +1,7 @@
 // data/aboutData.ts
 export const howWeWork = [
   {
-    title: "Advocacy and campaigns",
+    title: "Sustainable Crop Production",
     description: "We mobilise people to challenge the structures that sustain poverty and advocate for a better world.",
     href: "/advocacy",
     imgSrc: "/images/advocacy.jpg",

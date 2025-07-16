@@ -9,7 +9,7 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-bold mb-4">About Farm Safari</h3>
           <p className="text-sm text-gray-300">
-            We work with communities across Kenya to end food poverty and promote sustainable farming practices for a better future.
+           We combine indigenous knowledge, modern regenerative techniques, and collaborative partnerships to restore degraded ecosystems, improve rural livelihoods, and build sustainable food and economic systems. 
           </p>
         </div>
 
