@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 type Item = {
   title: string;
@@ -20,7 +21,15 @@ export default function HowWeWork({ items }: { items: Item[] }) {
       <div className="grid gap-8 px-4 md:grid-cols-3 max-w-7xl mx-auto">
         {items.map((item) => (
           <div key={item.title} className="bg-white rounded-lg shadow-md overflow-hidden">
-            <img src={item.imgSrc} alt={item.title} className="h-48 w-full object-cover" />
+            <div className="relative h-48 w-full">
+              <Image
+                src={item.imgSrc}
+                alt={item.title}
+                layout="fill"
+                objectFit="cover"
+                priority
+              />
+            </div>
             <div className="p-6">
               <h3 className="text-xl font-semibold text-green-700 mb-2">{item.title}</h3>
               <p className="text-gray-600 mb-4">{item.description}</p>
