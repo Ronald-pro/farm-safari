@@ -1,71 +1,85 @@
-// components/WhatWeDo.tsx
-// import { Megaphone, Handshake, Sprout } from "lucide-react";
+"use client"; // for Next.js app directory (optional)
+
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
 export default function WhatWeDo() {
 	const items = [
 		{
-			//   icon: <Handshake className="h-10 w-10 text-red-600" />,
 			title: "Sustainable Crop Production",
 			description:
 				"We promote climate-resilient, high-return crops like chili and moringa that restore soil health and generate income. We support farmer training and access to certified seeds and standards like GlobalGAP and KS 1758.",
 			link: "#"
 		},
 		{
-			//   icon: <Megaphone className="h-10 w-10 text-orange-500" />,
 			title: "Agroforestry and Carbon Farming",
 			description:
-				"We help farmers plant high carbon-sequestering trees like macadamia and moringa. These trees provide food, income, erosion control, and long-term environmental benefits. We are also preparing farmers for future participation in carbon credit markets. ",
+				"We help farmers plant high carbon-sequestering trees like macadamia and moringa. These trees provide food, income, erosion control, and long-term environmental benefits. We are also preparing farmers for future participation in carbon credit markets.",
 			link: "#"
 		},
 		{
-			//   icon: <Sprout className="h-10 w-10 text-green-700" />,
 			title: "Capacity Building",
 			description:
 				"We train farmers, especially women and the youth in regenerative farming and agroforestry models",
 			link: "#"
 		},
 		{
-			//   icon: <Sprout className="h-10 w-10 text-green-700" />,
-			title: "Collaborative Program Implementation ",
+			title: "Collaborative Program Implementation",
 			description:
 				"We partner with like-minded organizations to co-implement projects that scale impact and connect farmers to sustainable value chains.",
 			link: "#"
 		}
 	];
 
+	// Heading animation trigger
+	const [headingRef, headingInView] = useInView({ triggerOnce: true, threshold: 0.1 });
+
 	return (
 		<section className="py-16 px-4 bg-gray-50">
-			<div className="max-w-7xl mx-auto text-center mb-12">
+			<motion.div
+				ref={headingRef}
+				initial={{ opacity: 0, y: 40 }}
+				animate={headingInView ? { opacity: 1, y: 0 } : {}}
+				transition={{ duration: 0.6 }}
+				className="max-w-7xl mx-auto text-center mb-12"
+			>
 				<h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-2">
 					What we do
 				</h2>
 				<p className="text-gray-600">
-					Farm Safari runs regenerative agricultural and agroforestry programs through unique scalable  out-grower models.
+					Farm Safari runs regenerative agricultural and agroforestry programs through unique scalable out-grower models.
 				</p>
-				<h6 className="text-gray-600-bold">
+				<h6 className="text-gray-600 font-bold mt-2">
 					Our key areas include:
 				</h6>
-			</div>
+			</motion.div>
 
 			<div className="grid gap-8 md:grid-cols-2">
-				{items.map((item, index) => (
-					<div
-						key={index}
-						className="bg-white rounded-lg shadow-md p-6 text-center transition hover:shadow-lg"
-					>
-						{/* <div className="mb-4 flex justify-center">{item.icon}</div> */}
-						<h3 className="text-xl font-semibold text-green-900 mb-2">
-							{item.title}
-						</h3>
-						<p className="text-gray-600 mb-4">{item.description}</p>
-						<a
-							href={item.link}
-							className="text-green-700 font-medium underline"
+				{items.map((item, index) => {
+					const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+
+					return (
+						<motion.div
+							ref={ref}
+							key={index}
+							initial={{ opacity: 0, y: 50 }}
+							animate={inView ? { opacity: 1, y: 0 } : {}}
+							transition={{ duration: 0.6, delay: index * 0.2 }}
+							className="bg-white rounded-lg shadow-md p-6 text-center transition hover:shadow-lg"
 						>
-							Learn more
-						</a>
-					</div>
-				))}
+							<h3 className="text-xl font-semibold text-green-900 mb-2">
+								{item.title}
+							</h3>
+							<p className="text-gray-600 mb-4">{item.description}</p>
+							<a
+								href={item.link}
+								className="text-green-700 font-medium underline"
+							>
+								Learn more
+							</a>
+						</motion.div>
+					);
+				})}
 			</div>
 		</section>
 	);
