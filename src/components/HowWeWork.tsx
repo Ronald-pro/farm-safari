@@ -1,10 +1,12 @@
 import Link from "next/link";
+
 type Item = {
   title: string;
   description: string;
   href: string;
   imgSrc: string;
 };
+
 export default function HowWeWork({ items }: { items: Item[] }) {
   return (
     <section className="py-16 bg-gray-50">

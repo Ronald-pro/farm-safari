@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image'; // ✅ Import Next.js Image component
 
 type AboutUsSectionProps = {
   title: string;
@@ -26,10 +27,13 @@ export default function AboutUsSection({
           </Link>
         </div>
         <div>
-          <img
+          <Image
             src={imgSrc}
             alt={title}
+            width={600} // Customize as needed
+            height={400} // Customize as needed
             className="w-full h-auto object-cover rounded-lg shadow-lg"
+            unoptimized // Optional: if images are from external sources not in domains list
           />
         </div>
       </div>

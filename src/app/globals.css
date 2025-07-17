@@ -6,12 +6,14 @@
 } */
 
 :root {
-  --colors-primary: #78BE20;
-  --colors-darkgreen: #38761d;
-  --colors-beige: #f8f6f2;
-  --colors-gray: #63666A;
-  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --oxfam-green: #78be20;
+  --oxfam-darkgreen: #4a7c12;
+  --oxfam-lightgreen: #cdeaa6;
+  --oxfam-darkgray: #4b5563;
+  --oxfam-border: #e5e7eb;
+  --oxfam-lightbg: #f9fafb;
 }
+
 
 /* @media (prefers-color-scheme: dark) {
   :root {
