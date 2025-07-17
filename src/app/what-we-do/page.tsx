@@ -1,93 +1,88 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
 
-export default function WhatWeDoPage() {
-	const programs = [
-		{
-			title: "Climate Change",
-			description:
-				"We support climate-affected communities with adaptation strategies and advocacy.",
-			image: "/climate.jpg",
-			href: "#"
-		},
-		{
-			title: "First Peoples Justice",
-			description:
-				"Working alongside Indigenous communities for equality, rights, and respect.",
-			image: "/community.png",
-			href: "#"
-		},
-		{
-			title: "Gender Justice",
-			description:
-				"Promoting equality and ending gender-based violence around the globe.",
-			image: "/equality.jpg",
-			href: "#"
-		}
-		// {
-		// 	title: "Economic Justice",
-		// 	description:
-		// 		"Challenging the global inequality crisis with fair systems and opportunity.",
-		// 	image: "/economic.jpg",
-		// 	href: "/economic-justice"
-		// },
-		// {
-		// 	title: "Humanitarian Response",
-		// 	description:
-		// 		"Delivering life-saving aid in times of conflict, disaster and crisis.",
-		// 	image: "/humanitarian.jpg",
-		// 	href: "/humanitarian-response"
-		// }
-	];
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
-	return (
-		<main>
-			{/* Hero */}
-			<section className="bg-[var(--oxfam-lightgreen)] text-[var(--oxfam-green)] text-center text-white py-16 px-4">
-				<h1 className="text-4xl font-bold mb-4">What We Do</h1>
-				<p className="text-lg max-w-3xl mx-auto">
-					We work in partnership with communities to tackle food security, climate
-					change for better livelyhood with sustainable food.
-				</p>
-			</section>
+const items = [
+  {
+	title: "Sustainable Crop Production",
+	description:
+	  "We promote climate-resilient, high-return crops like chili and moringa that restore soil health and generate income. We support farmer training and access to certified seeds and standards like GlobalGAP and KS 1758.",
+	link: "#"
+  },
+  {
+	title: "Agroforestry and Carbon Farming",
+	description:
+	  "We help farmers plant high carbon-sequestering trees like macadamia and moringa. These trees provide food, income, erosion control, and long-term environmental benefits. We are also preparing farmers for future participation in carbon credit markets.",
+	link: "#"
+  },
+  {
+	title: "Capacity Building",
+	description:
+	  "We train farmers, especially women and the youth in regenerative farming and agroforestry models.",
+	link: "#"
+  },
+  {
+	title: "Collaborative Program Implementation",
+	description:
+	  "We partner with like-minded organizations to co-implement projects that scale impact and connect farmers to sustainable value chains.",
+	link: "#"
+  }
+];
 
-			{/* Program Cards */}
-			<section className="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-				{programs.map((item) => (
-					<Link
-						key={item.title}
-						href={item.href}
-						className="bg-white shadow hover:shadow-md rounded overflow-hidden"
-					>
-						<div className="relative h-52 w-full">
-							<Image
-								src={item.image}
-								alt={item.title}
-								layout="fill"
-								objectFit="cover"
-							/>
-						</div>
-						<div className="p-4 text-[var(--oxfam-green)]">
-							<h2 className="text-xl font-bold mb-2">{item.title}</h2>
-							<p className="text-sm">{item.description}</p>
-						</div>
-					</Link>
-				))}
-			</section>
+export default function WhatWeDo() {
+  const [headingRef, headingInView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
-			{/* CTA Section */}
-			<section className="bg-[var(--oxfam-green)] text-white text-center py-12">
-				<h2 className="text-2xl font-bold mb-4">Join Our Mission</h2>
-				<p className="mb-6">
-					Help us create a just, sustainable future for everyone.
-				</p>
-				{/* <Link
-					href="/donate"
-					className="inline-block bg-white text-[var(--oxfam-green)] px-6 py-3 rounded-full font-semibold hover:opacity-90"
-				>
-					Donate Now
-				</Link> */}
-			</section>
-		</main>
-	);
+  return (
+	<section className="py-16 px-4 bg-[var(--oxfam-lightbg)]">
+	  <motion.div
+		ref={headingRef}
+		initial={{ opacity: 0, y: 40 }}
+		animate={headingInView ? { opacity: 1, y: 0 } : {}}
+		transition={{ duration: 0.6 }}
+		className="max-w-7xl mx-auto text-center mb-12"
+	  >
+		<h2 className="text-3xl md:text-4xl font-bold text-[var(--oxfam-green)] mb-2">
+		  What we do
+		</h2>
+		<p className="text-[var(--oxfam-darkgray)]">
+		  Farm Safari runs regenerative agricultural and agroforestry programs through unique scalable out-grower models.
+		</p>
+		<h6 className="text-[var(--oxfam-darkgray)] font-bold mt-2">
+		  Our key areas include:
+		</h6>
+	  </motion.div>
+
+	  <div className="grid gap-8 md:grid-cols-2">
+		{items.map((item, index) => (
+		  <WhatWeDoItem key={index} item={item} index={index} />
+		))}
+	  </div>
+	</section>
+  );
+}
+
+function WhatWeDoItem({ item, index }: { item: { title: string; description: string; link: string }, index: number }) {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+
+  return (
+	<motion.div
+	  ref={ref}
+	  initial={{ opacity: 0, y: 50 }}
+	  animate={inView ? { opacity: 1, y: 0 } : {}}
+	  transition={{ duration: 0.6, delay: index * 0.2 }}
+	  className="bg-white rounded-xl shadow-md p-6 text-center border border-[var(--oxfam-border)] hover:shadow-lg transition"
+	>
+	  <h3 className="text-xl font-semibold text-[var(--oxfam-green)] mb-2">
+		{item.title}
+	  </h3>
+	  <p className="text-[var(--oxfam-darkgray)] mb-4">{item.description}</p>
+	  <a
+		href={item.link}
+		className="text-[var(--oxfam-green)] font-medium underline hover:text-[var(--oxfam-darkgreen)]"
+	  >
+		Learn more
+	  </a>
+	</motion.div>
+  );
 }

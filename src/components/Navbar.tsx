@@ -99,12 +99,7 @@ export default function Navbar() {
 							{item.text}
 						</Link>
 					))}
-					<Link
-						href="/donate"
-						className="w-full block text-center bg-[var(--oxfam-green)] text-white py-2 rounded hover:opacity-90"
-					>
-						DONATE
-					</Link>
+					
 				</div>
 			)}
 		</nav>
