@@ -17,7 +17,7 @@ export default function AboutUsSection({
   imgLeft = false,
 }: AboutUsSectionProps) {
   return (
-    <section className="py-4 bg-white even:bg-gray-50">
+    <section className="py-6 bg-white even:bg-gray-50">
       <div className={`max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-6 ${imgLeft ? 'md:grid-flow-row-dense' : ''}`}>
         <div>
           <h2 className="text-2xl font-extrabold text-green-800 mb-4">{title}</h2>
