@@ -7,7 +7,7 @@ export default function AboutPage() {
 	return (
 		<div>
 			<header
-				className="relative w-full h-180 py-20 md:py-32 px-4 bg-cover bg-center bg-no-repeat"
+				className="relative w-full h-auto py-20 md:py-32 px-4 bg-cover bg-center bg-no-repeat"
 				style={{ backgroundImage: "url('/animated_gradient.svg')" }}
 			>
 				{/* Overlay for readability */}
