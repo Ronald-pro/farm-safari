@@ -1,12 +1,13 @@
 // pages/about.tsx
 import AboutUsSection from "@/components/AboutUsSection";
+import CoreValuesSection from "@/components/Mission";
 import { aboutSections } from "@/data/aboutSection";
 
 export default function AboutPage() {
 	return (
 		<div>
 			<header
-				className="relative w-full h-auto py-20 md:py-32 px-4 bg-cover bg-center bg-no-repeat"
+				className="relative w-full h-120 py-20 md:py-32 px-4 bg-cover bg-center bg-no-repeat"
 				style={{ backgroundImage: "url('/animated_gradient.svg')" }}
 			>
 				{/* Overlay for readability */}
@@ -44,7 +45,11 @@ export default function AboutPage() {
 				/>
 			))}
 
-			<section className="bg-gray-100 py-6 text-center"></section>
+			<section className="bg-gray-100 py-1 text-center"></section>
+			<section id="values">
+				<CoreValuesSection />
+			</section>
+			<section className="bg-gray-100 py-1 text-center"></section>
 		</div>
 	);
 }
