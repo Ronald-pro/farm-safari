@@ -1,4 +1,4 @@
-import Link from 'next/link';
+
 import Image from 'next/image';
 // ✅ Import Next.js Image component
 
@@ -13,7 +13,6 @@ type AboutUsSectionProps = {
 export default function AboutUsSection({
   title,
   description,
-  href,
   imgSrc,
   imgLeft = false,
 }: AboutUsSectionProps) {
