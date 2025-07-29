@@ -89,8 +89,8 @@ export default function StrategyAndApproach() {
 							{
 								title: "1. Environmental Restoration",
 								points: [
-									"Restore 100+ hectares of degraded land annually with agroforestry.",
-									"Implement rainwater harvesting and drip irrigation techniques."
+									"Restore 100+ hectares of degraded land annually through agroforestry, planting high carbon-sequestering trees like macadamia and moringa.",
+									"Implement water conservation techniques, such as rainwater harvesting and drip irrigation, to support farming in arid regions"
 								]
 							},
 							{
@@ -102,14 +102,14 @@ export default function StrategyAndApproach() {
 							{
 								title: "3. Economic Sustainability",
 								points: [
-									"Develop crop value chains & connect to local/global markets.",
-									"Facilitate access to carbon credit markets through partnerships."
+									"Develop various crops value chains and connect farmers to local and international markets to boost incomes.",
+									"Facilitate access to carbon credit markets through partnerships as a long term goal."
 								]
 							},
 							{
 								title: "4. Partnerships and Innovation",
 								points: [
-									"Collaborate with KEFRI and KOAN for technical expertise."
+									"Collaborate with organizations like Kenya Forestry Research Institute (KEFRI) and Kenya Organic Agriculture Network (KOAN) for technical expertise."
 								]
 							}
 						].map((pillar, idx) => (
