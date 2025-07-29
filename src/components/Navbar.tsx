@@ -13,6 +13,7 @@ export default function Navbar() {
 		{ text: "Home", href: "/" },
 		{ text: "About Us", href: "/about" },
 		{ text: "What We Do", href: "/what-we-do" },
+		{ text: "Our Strategic Framework", href: "/strategy-approach" },
 		{ text: "Our Team", href: "#" }
 	];
 
@@ -99,7 +100,6 @@ export default function Navbar() {
 							{item.text}
 						</Link>
 					))}
-					
 				</div>
 			)}
 		</nav>

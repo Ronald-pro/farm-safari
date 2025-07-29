@@ -1,17 +1,11 @@
-import WhatWeDo from "@/components/WhatWeDO";
 import StrategyAndApproach from "@/components/StrategyAndApproach";
 
-export default function HomePage() {
+export default function StrategyPage() {
 	return (
 		<div>
-			<section id="what-we-do">
-				<WhatWeDo />
-			</section>
-
 			<section id="strategy-approach">
 				<StrategyAndApproach />
 			</section>
-
 		</div>
 	);
 }
