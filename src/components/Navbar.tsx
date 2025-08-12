@@ -33,9 +33,9 @@ export default function Navbar() {
 						</Link>
 						<div
 							className="hidden sm:block pl-4"
-							style={{ borderLeft: "2px solid #61A534" }}
+							style={{ borderLeft: "2px solid #798b6dff" }}
 						>
-							<p className="text-lg font-medium" style={{ color: "#61A534" }}>
+							<p className="text-sm font-medium" style={{ color: "#61A534" }}>
 								Change Lives with Us
 							</p>
 						</div>

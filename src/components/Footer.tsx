@@ -40,14 +40,6 @@ export default function Footer() {
 								What We Do
 							</Link>
 						</li>
-						<li>
-							<Link
-								href="#"
-								className="hover:text-300 transition duration-200"
-							>
-								Resources
-							</Link>
-						</li>
 					</ul>
 				</div>
 
