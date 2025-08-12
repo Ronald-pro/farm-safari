@@ -91,7 +91,7 @@ export default function HeroSection() {
 				>
 					<Link
 						href="/about"
-						className="inline-block bg-green-600 text-white font-semibold py-3 px-6 rounded shadow hover:bg-green-700 transition"
+						className="inline-block bg-[#61A534] text-white font-semibold py-3 px-6 rounded shadow hover:bg-blue-400 transition"
 					>
 						Read More About Us
 					</Link>

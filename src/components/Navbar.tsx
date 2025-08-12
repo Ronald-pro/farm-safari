@@ -1,107 +1,130 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FaSearch } from "react-icons/fa";
 import { HiOutlineMenu, HiX } from "react-icons/hi";
 
 export default function Navbar() {
-	const [open, setOpen] = useState(false);
-	//const [dropdownOpen, setDropdownOpen] = useState(false);
-	const [activeSection, setActiveSection] = useState<string | null>(null);
+	const [query, setQuery] = useState("");
+	const [mobileOpen, setMobileOpen] = useState(false);
 
 	const menuItems = [
-		{ text: "Home", href: "/" },
 		{ text: "About Us", href: "/about" },
 		{ text: "What We Do", href: "/what-we-do" },
 		{ text: "Our Strategic Framework", href: "/strategy-approach" },
-		{ text: "Our Team", href: "#" }
+		{ text: "Get involved", href: "#" }
 	];
 
-	useEffect(() => {
-		const sections = document.querySelectorAll("section[id]");
-
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						setActiveSection(entry.target.id);
-					}
-				});
-			},
-			{ threshold: 0.6 }
-		);
-
-		sections.forEach((section) => observer.observe(section));
-		return () => sections.forEach((section) => observer.unobserve(section));
-	}, []);
-
-	// const scrollToSection = (id: string) => {
-	// 	const section = document.getElementById(id);
-	// 	if (section) {
-	// 		section.scrollIntoView({ behavior: "smooth" });
-	// 		setOpen(false); // close mobile menu
-	// 	}
-	// };
-
 	return (
-		<nav className="fixed top-0 left-0 w-full bg-white shadow border-b border-[var(--colors-lightgreen)] z-50">
-			<div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
-				<div className="flex items-center space-x-4">
-					<Image src="/logo.png" alt="Logo" width={90} height={90} />
-					<div className="hidden sm:block h-10 border-l-3 border-[var(--colors-green)] pl-4">
-						<p className="text-sm text-[var(--colors-green)]">
-							Change Lives with Us
-						</p>
-					</div>
-				</div>
-
-				{/* Desktop Menu */}
-				<div className="hidden md:flex items-center space-x-6">
-					{menuItems.map((item) => (
-						<Link
-							key={item.text}
-							href={item.href}
-							className={`text-[var(--oxfam-green)] hover:underline ${
-								activeSection === item.href.replace("#", "")
-									? "font-bold underline"
-									: ""
-							}`}
-						>
-							{item.text}
+		<header className="w-full z-50">
+			{/* Logo + tagline row */}
+			<div className="bg-white py-5 border-b border-gray-200">
+				<div className="max-w-7xl mx-auto flex items-center justify-between px-4">
+					<div className="flex items-center space-x-4">
+						<Link href="/" title="Home">
+							<Image
+								className="cursor-pointer"
+								src="/logo.png"
+								alt="Logo"
+								width={90}
+								height={90}
+							/>
 						</Link>
-					))}
-				</div>
+						<div
+							className="hidden sm:block pl-4"
+							style={{ borderLeft: "2px solid #61A534" }}
+						>
+							<p className="text-lg font-medium" style={{ color: "#61A534" }}>
+								Change Lives with Us
+							</p>
+						</div>
+					</div>
 
-				{/* Mobile Menu Toggle */}
-				<div className="md:hidden">
-					<button
-						onClick={() => setOpen(!open)}
-						className="text-[var(--colors-green)] text-2xl"
+					{/* <div
+						className="max-w-7xl mx-auto flex justify-end items-center px-4 py-2 text-sm"
+						style={{ color: "#61A534" }}
 					>
-						{open ? <HiX /> : <HiOutlineMenu />}
+						<Link href="/contact" className="hover:underline">
+							Contact us
+						</Link>
+					</div> */}
+
+					{/* Mobile menu toggle */}
+					<button
+						onClick={() => setMobileOpen(!mobileOpen)}
+						className="md:hidden text-3xl"
+						style={{ color: "#61A534" }}
+					>
+						{mobileOpen ? <HiX /> : <HiOutlineMenu />}
 					</button>
 				</div>
 			</div>
 
-			{/* Mobile Menu */}
-			{open && (
-				<div className="md:hidden bg-[var(--colors-lightgreen)] px-4 pb-4 space-y-2">
-					{menuItems.map((item) => (
-						<Link
-							key={item.text}
-							href={item.href}
-							className={`block text-[var(--colors-green)] py-2 border-b hover:underline ${
-								activeSection === item.href.replace("#", "")
-									? "font-bold underline"
-									: ""
-							}`}
-							onClick={() => setOpen(false)}
-						>
-							{item.text}
-						</Link>
-					))}
+			{/* Desktop menu */}
+			<nav className="bg-white">
+				<div className="max-w-7xl mx-auto px-4">
+					<div className="hidden md:grid grid-cols-4 gap-2 py-4">
+						{menuItems.map((item) => (
+							<Link
+								key={item.text}
+								href={item.href}
+								className="text-white w-full h-[50px] flex items-center justify-center rounded text-base font-semibold tracking-wide transition-colors"
+								style={{
+									backgroundColor: "#61A534",
+									transition: "background-color 0.2s"
+								}}
+								onMouseEnter={(e) =>
+									(e.currentTarget.style.backgroundColor = "#4f8f29")
+								}
+								onMouseLeave={(e) =>
+									(e.currentTarget.style.backgroundColor = "#61A534")
+								}
+							>
+								{item.text}
+							</Link>
+						))}
+					</div>
+
+					{/* Mobile menu */}
+					{mobileOpen && (
+						<div className="flex flex-col items-stretch md:hidden bg-white border-t border-gray-200">
+							{/* Search bar first */}
+							<form
+								onSubmit={(e) => e.preventDefault()}
+								className="flex items-center border rounded overflow-hidden m-4"
+							>
+								<input
+									value={query}
+									onChange={(e) => setQuery(e.target.value)}
+									type="text"
+									placeholder="Search"
+									className="px-3 py-2 text-sm outline-none w-full"
+								/>
+								<button
+									className="text-white px-3"
+									style={{ backgroundColor: "#61A534" }}
+								>
+									<FaSearch />
+								</button>
+							</form>
+
+							{/* Full-width green menu links */}
+							{menuItems.map((item) => (
+								<Link
+									key={item.text}
+									href={item.href}
+									className="text-white px-6 py-4 text-lg font-semibold border-b border-white"
+									style={{ backgroundColor: "#61A534" }}
+									onClick={() => setMobileOpen(false)}
+								>
+									{item.text}
+								</Link>
+							))}
+						</div>
+					)}
 				</div>
-			)}
-		</nav>
+			</nav>
+		</header>
 	);
 }

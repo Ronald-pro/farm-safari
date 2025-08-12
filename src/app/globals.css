@@ -25,10 +25,11 @@
 @layer base {
   body {
     font-family: var(--font-sans);
-    background-color: var(--colors-darkgreen);
-    color: var(--colors-darkgreen);
+    background-color: #4B713D; /* Oxfam dark green */
+    color: #4B713D; /* or another readable color if needed */
   }
 }
+
 
 html {
   scroll-behavior: smooth;

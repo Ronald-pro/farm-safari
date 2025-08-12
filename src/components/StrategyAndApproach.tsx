@@ -11,7 +11,7 @@ import {
 export default function StrategyAndApproach() {
 	return (
 		<section className="bg-white py-24 px-6">
-			<div className="max-w-7xl mx-auto space-y-24">
+			<div className="max-w-7xl mx-auto space-y-24 ">
 				{/* OUR APPROACH */}
 				<motion.div
 					initial={{ opacity: 0, y: 40 }}
@@ -20,14 +20,14 @@ export default function StrategyAndApproach() {
 					transition={{ duration: 0.6 }}
 					className="text-center max-w-4xl mx-auto"
 				>
-					<h3 className="text-2xl font-bold text-green-700 mb-4">
+					<h3 className="text-2xl font-bold text-[#61A534] mb-4">
 						Our Approach
 					</h3>
 					<p className="text-gray-600 text-lg mb-12">
 						We believe that change grows from the ground up. Our approach is:
 					</p>
 
-					<div className="grid gap-8 md:grid-cols-2">
+					<div className="grid gap-8 md:grid-cols-2 w-full max-w-none">
 						{[
 							{
 								title: "Farmer-Centric",
@@ -54,11 +54,11 @@ export default function StrategyAndApproach() {
 								key={idx}
 								className="flex items-start gap-4 p-6 bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition"
 							>
-								<div className="p-4 bg-green-700 rounded-full flex items-center justify-center">
+								<div className="p-4 bg-[#61A534] rounded-full flex items-center justify-center">
 									{item.icon}
 								</div>
 								<div>
-									<h4 className="text-xl font-semibold text-green-800 mb-1">
+									<h4 className="text-xl font-semibold text-[#61A534] mb-1">
 										{item.title}
 									</h4>
 									<p className="text-gray-600 text-sm">{item.desc}</p>
@@ -76,7 +76,7 @@ export default function StrategyAndApproach() {
 					transition={{ duration: 0.6 }}
 					className="max-w-6xl mx-auto"
 				>
-					<h3 className="text-2xl font-bold text-green-700 text-center mb-4">
+					<h3 className="text-2xl font-bold text-[#61A534] text-center mb-4">
 						Our Strategic Framework
 					</h3>
 					<p className="text-gray-600 text-lg mb-12 text-center">
@@ -91,7 +91,7 @@ export default function StrategyAndApproach() {
 					<div className="grid md:grid-cols-2 gap-8">
 						{/* Category 1: Environment */}
 						<div className="bg-[#f0fdf4] p-6 rounded-xl border-l-4 border-green-600">
-							<h3 className="text-xl font-bold text-green-700 mb-4">
+							<h3 className="text-xl font-bold text-[#61A534] mb-4">
 								Environment
 							</h3>
 							<p className="text-gray-600 text-lg mb-12 text-center">
@@ -130,7 +130,7 @@ export default function StrategyAndApproach() {
 
 						{/* Category 2: Food Security + Nutrition */}
 						<div className="bg-[#ecfdf5] p-6 rounded-xl border-l-4 border-teal-600">
-							<h3 className="text-xl font-bold text-green-700 mb-4">
+							<h3 className="text-xl font-bold text-[#61A534] mb-4">
 								Food Security + Nutrition
 							</h3>
 							<p className="text-gray-600 text-lg mb-12 text-center">
@@ -159,7 +159,7 @@ export default function StrategyAndApproach() {
 
 						{/* Category 3: Social */}
 						<div className="bg-[#fefce8] p-6 rounded-xl border-l-4 border-yellow-600">
-							<h3 className="text-xl font-bold text-green-700 mb-4">Social</h3>
+							<h3 className="text-xl font-bold text-[#61A534] mb-4">Social</h3>
 							<p className="text-gray-600 text-lg mb-12 text-center">
 								Our approach strengthens communities and fosters social
 								equality.
@@ -185,7 +185,7 @@ export default function StrategyAndApproach() {
 
 						{/* Category 4: Economic */}
 						<div className="bg-[#fef2f2] p-6 rounded-xl border-l-4 border-red-500">
-							<h3 className="text-xl font-bold text-green-700 mb-4">
+							<h3 className="text-xl font-bold text-[#61A534] mb-4">
 								Economic
 							</h3>
 							<p className="text-gray-600 text-lg mb-12 text-center">
@@ -215,7 +215,7 @@ export default function StrategyAndApproach() {
 
 					{/* Pillars */}
 					<div className="mt-16">
-						<h3 className="text-3xl font-semibold text-green-700 mb-4 text-center">
+						<h3 className="text-3xl font-semibold text-[#61A534] mb-4 text-center">
 							Our Pillars
 						</h3>
 						<p className="text-gray-600 text-lg mb-12 text-center max-w-4xl mx-auto">
@@ -262,7 +262,7 @@ export default function StrategyAndApproach() {
 								>
 									<div className="flex items-center mb-4 space-x-3">
 										<div className="text-3xl">{pillar.icon}</div>
-										<h4 className="text-xl font-bold text-green-800">
+										<h4 className="text-xl font-bold text-[#61A534]">
 											{pillar.title}
 										</h4>
 									</div>

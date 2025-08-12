@@ -51,12 +51,12 @@ export default function WhatWeDo() {
         transition={{ duration: 0.6 }}
         className="max-w-6xl mx-auto text-center mb-12"
       >
-        <h2 className="text-4xl font-bold text-green-700 mb-4">What We Do</h2>
+        <h2 className="text-2xl font-bold text-[#61A534] mb-4">What We Do</h2>
         <p className="text-gray-700 text-lg">
           Farm Safari runs regenerative agriculture and agroforestry programs
           through scalable out-grower models.
         </p>
-        <p className="text-gray-600 font-semibold mt-2">Our key areas include:</p>
+        <p className="text-gray-600 font-semibold mt-2">Our key areas</p>
       </motion.div>
 
       <div className="grid gap-8 md:grid-cols-2 max-w-6xl mx-auto">
@@ -86,11 +86,11 @@ function WhatWeDoItem({
       className="bg-white rounded-xl border border-gray-200 shadow-md p-8 hover:shadow-lg transition"
     >
       <div className="flex items-center justify-center mb-4">
-        <div className="bg-green-700 text-white p-4 rounded-full text-3xl">
+        <div className="bg-[#61A534] text-white p-4 rounded-full text-3xl">
           {item.icon}
         </div>
       </div>
-      <h3 className="text-xl font-semibold text-green-700 mb-3 text-center">
+      <h3 className="text-xl font-semibold text-[#61A534] mb-3 text-center">
         {item.title}
       </h3>
       <p className="text-gray-600 text-sm text-center">{item.description}</p>

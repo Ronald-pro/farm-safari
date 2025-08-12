@@ -20,7 +20,7 @@ export default function AboutUsSection({
     <section className="py-6 bg-white even:bg-gray-50">
       <div className={`max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-6 ${imgLeft ? 'md:grid-flow-row-dense' : ''}`}>
         <div>
-          <h2 className="text-2xl font-extrabold text-green-800 mb-4">{title}</h2>
+          <h2 className="text-2xl font-extrabold text-[#61A534] mb-4">{title}</h2>
           <p className="text-lg text-gray-700 mb-6 leading-relaxed">{description}</p>
         </div>
         <div>
