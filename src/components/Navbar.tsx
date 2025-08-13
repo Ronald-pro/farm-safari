@@ -13,7 +13,7 @@ export default function Navbar() {
 		{ text: "About Us", href: "/about" },
 		{ text: "What We Do", href: "/what-we-do" },
 		{ text: "Our Strategic Framework", href: "/strategy-approach" },
-		{ text: "Get involved", href: "#" }
+		{ text: "Get involved", href: "/get-involved" }
 	];
 
 	return (
