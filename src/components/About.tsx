@@ -6,7 +6,7 @@ type AboutProps = {
 
 export default function About({ title, subtitle, cta }: AboutProps) {
 	return (
-		<section className="bg-primary text-white py-20 text-center">
+		<section className="bg-primary text-white py-12 text-center">
 			<h1 className="text-4xl font-bold">{title}</h1>
 			<p className="mt-4 text-lg">{subtitle}</p>
 			{cta && (
